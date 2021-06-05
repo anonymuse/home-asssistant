@@ -1,13 +1,13 @@
 recorder:
-  db_url: mysql://agador:!password@192.168.0.49:3306/homeassistant?charset=utf8
-
+  db_url: mysql://agador:!db_password@192.168.0.49:3306/homeassistant?charset=utf8
+  
 homeassistant:
   name: Agador
-  latitude: !latitude
-  longitude: !longitude
+  latitude: !secret latitude
+  longitude: !secret longitude
   unit_system: imperial
   time_zone: America/New_York
-
+  
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
