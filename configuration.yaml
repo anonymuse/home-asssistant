@@ -1,5 +1,5 @@
 recorder:
-  db_url: mysql://agador:!db_password@192.168.0.49:3306/homeassistant?charset=utf8
+  db_url: !secret recorder_db_url
   
 homeassistant:
   name: Agador
