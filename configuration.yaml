@@ -1,13 +1,25 @@
 recorder:
   db_url: !secret recorder_db_url
-  
+
+# General Options
 homeassistant:
   name: Agador
   latitude: !secret latitude
   longitude: !secret longitude
   unit_system: imperial
   time_zone: America/New_York
-  
+  customize:
+    sensor.weather_cloud_cover:
+      hidden: false
+    sensor.weather_precip:
+      hidden: false
+    sensor.weather_precip_intensity:
+      friendly_name: 'Rainfall'
+    sensor.weather_humidity:
+      friendly_name: 'Outdoor humidity'
+    sensor.weather_temperature:
+      friendly_name: 'Outdoor temperature'
+
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
@@ -15,6 +27,12 @@ default_config:
 tts:
   - platform: google_translate
 
+# Spotify Configuration
+spotify:
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
+
+# Includes
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
